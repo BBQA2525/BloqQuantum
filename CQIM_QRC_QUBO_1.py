@@ -459,9 +459,6 @@ from dwave.system import DWaveSampler, EmbeddingComposite
 
 from dwave.samplers import SimulatedAnnealingSampler
 
-# endpoint = 'https://cloud.dwavesys.com/sapi'
-# token = '***' # Please relace with your own token
-
 list_feat_vecs = []
 for key, array in array_lst.items():
 	for item in np.ndenumerate(array):

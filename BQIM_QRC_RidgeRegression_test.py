@@ -17,7 +17,7 @@ import pandas as pd
 from warnings import simplefilter
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
 
-from itertools import combinations, combine_and_scale
+from itertools import combinations
 
 from statlog_german_credit_data_schema import column_list
 from ClassicalPreprocess import ohe, scaler_transform
@@ -189,7 +189,8 @@ data2 = pd.concat([data_bad, data_good])
 data_copy2 = data2.copy()
 data_copy2['class'] = data_copy2['class'].where(data_copy2['class'] == 1, np.float64(0.0))
 data_copy2 = data_copy2.astype(np.float64).interpolate() 
-scale_attribute_df2 = preprocess_ohe_data(data_copy2)
+#scale_attribute_df2 = preprocess_ohe_data(data_copy2)
+scale_attribute_df2 = data_copy2
 
 #print(scale_attribute_df2.columns.tolist())
 scale_attribute_df2_unique_cts = scale_attribute_df2.nunique()
