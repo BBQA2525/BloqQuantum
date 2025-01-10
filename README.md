@@ -1,3 +1,3 @@
 # BloqQuantum
 Project
-(https://[repo].github.io/assets/my_file.pdf)
+<object data="BloqQuantumProjectOverview.pdf" width="1000" height="1000" type='application/pdf'/>
