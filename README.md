@@ -1,2 +1,2 @@
 # BloqQuantum
-[Project Overview](BloqQuantumOverview.pdf)
+[Project Overview](BloqQuantumProjectOverview.pdf)
