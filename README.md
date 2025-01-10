@@ -1,3 +1,3 @@
 # BloqQuantum
 Project
-[Uploading BloqQuantumProjectOverview.pdf…]()
+(https://[repo].github.io/assets/my_file.pdf)
