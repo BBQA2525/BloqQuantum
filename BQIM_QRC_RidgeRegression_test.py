@@ -30,6 +30,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 #from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 import numpy as np
+from sklearn.linear_model import RidgeCV
   
 # fetch dataset 
 statlog_german_credit_data = fetch_ucirepo(id=144) 
@@ -650,7 +651,12 @@ sign_y_arr = np.where(y_arr < 0, 0, y_arr)
 binary_y_arr = np.round(sign_y_arr)
 
 # Create and fit the linear model
-model = LinearRegression()
+# repeated 10-fold cross-validation
+#### num_split has to be no greater than number of samples
+cv = RepeatedKFold(n_splits=2, n_repeats=3, random_state=1)
+# RidgeCV hyperparameter tuning
+model = RidgeCV(alphas=arange(0, 1, 0.01), cv=cv, scoring='neg_mean_absolute_error')
+# fit model
 model.fit(X, y_arr)
 
 # Make predictions
